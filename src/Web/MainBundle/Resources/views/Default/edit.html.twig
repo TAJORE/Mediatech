@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title> edit</title>
+</head>
+<body>
+<a href="{{ path('main_homepage') }}">Liste des document</a>
+<h2>MODIFIER UN DOCUMENT </h2>
+<div class="">
+    <div class="">
+        {{ form_start(form) }}
+            {{ form_rest(form) }}
+        <br>
+        <button type="submit">Enregistrer</button>
+        {{ form_end(form) }}
+    </div>
+</div>
+</body>
+</html>

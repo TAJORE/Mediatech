@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title> Home</title>
+</head>
+<body>
+
+<a href="{{ path('main_add') }}">Nouveau document </a>
+<h2>Liste des doucments </h2>
+<div class="">
+
+    <div>
+        <fieldset >
+            <legend>Zone de recherche</legend>
+            <form action="" method="post">
+                <input type="text" id="name" name="name" size="100" placeholder="Rechercher par nom">
+                <button type="submit">Rechercher</button>
+            </form>
+            <a href="{{ path('main_homepage') }}">tous les documents </a>
+        </fieldset>
+    </div>
+    <br><br>
+    <table width="100%" border="1">
+        <tr>
+            <td>Name</td>
+            <td>Type</td>
+            <td>Author</td>
+            <td>Edition date</td>
+            <td>#</td>
+            <td>#</td>
+        </tr>
+        {% for document in list  %}
+            <tr>
+                <td><a href="{{ path('main_detail',{id:document.id}) }}" title="cliquer pour plus d'information">{{ document.name }}</a></td>
+                <td>{{ document.type }}</td>
+                <td>{{ document.autor }}</td>
+                <td>{{ document.editionDate|date("d-m-Y") }}</td>
+                <td><a href="{{ path('main_edit',{id:document.id}) }}">Modifier</a></td>
+                <td><a href="{{ path('main_delete',{id:document.id}) }}">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+</body>
+</html>

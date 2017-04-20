@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title> Detail</title>
+</head>
+<body>
+<a href="{{ path('main_homepage') }}">Liste des document</a>
+<a href="{{ path('main_add') }}">Nouveau document </a>
+<h2>Detail  des documents </h2>
+<div class="">
+   <p>
+       <strong>Name :</strong> {{ document.name }}
+   </p>
+    <p>
+        <strong>Author :</strong> {{ document.autor }}
+    </p>
+    <p>
+        <strong>Type :</strong> {{ document.type }}
+    </p>
+    <p>
+        <strong>Edition date :</strong> {{ document.editionDate|date('d-m-Y') }}
+    </p>
+    <p>
+        <strong>Description :</strong> {{ document.description }}
+    </p>
+</div>
+</body>
+</html>
